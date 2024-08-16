@@ -27,3 +27,7 @@ print(f'[8] GC Content in Subsection (k=5): {gc_content_subsec(DNA_Str, k=5)}')
 print(f'[9] Aminoacids Sequence from DNA:\n    {translate_seq(DNA_Str)}')
 
 print(f'[10] Codon Frequencies (L): {codon_usage(DNA_Str, "L")}')
+
+print(f'[11] Reading Frames:')
+for frame in gen_reading_frames(DNA_Str):
+    print(f'    {frame}')

@@ -95,3 +95,29 @@ def codon_usage(dna_seq, aminoacid):
     for dna_seq in freq_dict:
         freq_dict[dna_seq] = round(freq_dict[dna_seq] / total_wigth, 2)
     return freq_dict
+
+
+##################################
+#      Open Reading Frames       # 
+##################################
+
+def gen_reading_frames(dna_seq):
+    """ Generate the six reading frames of a DNA sequence, including the reverse comp """
+    frames = []
+    frames.append(translate_seq(dna_seq, 0))
+    frames.append(translate_seq(dna_seq, 1))
+    frames.append(translate_seq(dna_seq, 2))
+
+    frames.append(translate_seq(revererse_complement(dna_seq), 0))
+    frames.append(translate_seq(revererse_complement(dna_seq), 1))
+    frames.append(translate_seq(revererse_complement(dna_seq), 2))
+
+    return frames
+
+
+###############################################
+#      Protein Search In Reading Frames       # 
+###############################################
+
+
+
